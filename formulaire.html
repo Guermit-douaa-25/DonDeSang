@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulaire de Demande - Don de Sang</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      input.error,
+      select.error {
+        border: 2px solid red;
+      }
+      input.success,
+      select.success {
+        border: 2px solid green;
+      }
+      .error-message {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="inscription.html"><i class="fas fa-user-plus"></i> S'inscrire</a>
+      <a href="formulaire.html"><i class="fas fa-file-alt"></i> Formulaire</a>
+      <a href="hopitaux.html"><i class="fas fa-hospital"></i> Hôpitaux</a>
+      <a href="demandes.php"><i class="fas fa-list"></i> Demandes</a>
+      <a href="statistiques.php"
+        ><i class="fas fa-chart-bar"></i> Statistiques</a
+      >
+      <a href="apropos.html"><i class="fas fa-info-circle"></i> À propos</a>
+    </nav>
+
+    <section class="request-form">
+      <h1>Demande de Sang</h1>
+      <form id="demandeForm" action="formulaire.php" method="post">
+        <label for="name">Nom complet:</label><br />
+        <input type="text" id="name" name="name" />
+        <div class="error-message" id="error-name"></div>
+        <br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" />
+        <div class="error-message" id="error-email"></div>
+        <br />
+
+        <label for="phone">Téléphone:</label><br />
+        <input type="tel" id="phone" name="phone" />
+        <div class="error-message" id="error-phone"></div>
+        <br />
+
+        <label for="blood">Fiche de sang:</label><br />
+        <select id="blood" name="blood">
+          <option value="">--Choisir--</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+        <div class="error-message" id="error-blood"></div>
+        <br />
+
+        <label for="wilaya">Wilaya:</label><br />
+        <input type="text" id="wilaya" name="wilaya" />
+        <div class="error-message" id="error-wilaya"></div>
+        <br />
+
+        <label for="quantity">Quantité (en unités):</label><br />
+        <input type="number" id="quantity" name="quantity" />
+        <div class="error-message" id="error-quantity"></div>
+        <br />
+
+        <button type="submit">Envoyer la demande</button>
+        <div id="loader" style="display: none; margin-top: 10px">
+          ⏳ Envoi en cours...
+        </div>
+      </form>
+
+      <!-- رسالة التحقق -->
+      <div
+        id="demandeMessage"
+        style="margin-top: 10px; font-weight: bold"
+      ></div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Don de Sang. Tous droits réservés.</p>
+      <p>Contact: contact@dondesang.com | Téléphone: 0555 123 456</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
